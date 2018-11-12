@@ -1,0 +1,40 @@
+<todoForm>
+    <form id="todoForm">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name *" value=""/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Your Phone Number *" value=""/>
+                </div>
+                <div class="form-group">
+                    <textarea name="msg" class="form-control" placeholder="Describe Your Issue *"
+                              style="width: 100%; height: 170px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="save_todo" onclick={submit}>Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>Issue List</h1>
+
+    </form>
+
+    <script>
+     console.log(opts);
+     var tag = this;
+     var todos = opts.todos;
+
+     tag.submit = function() {
+         if (tag.name.value) {
+             todos.add({ "name" : tag.name.value, "number" : tag.phone.value, "msg" : tag.msg.value });
+             tag.name.value = '';
+             tag.phone.value = '';
+             tag.msg.value = '';
+         }
+     }
+    </script>
+</todoForm>

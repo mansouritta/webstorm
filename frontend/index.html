@@ -1,0 +1,33 @@
+<html>
+  <head>
+      <title>Issue Tracker</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container contact-form">
+
+        <!--<todo_Search></todo_Search>-->
+
+        <todoList></todoList>
+
+    </div>
+
+    <script src="src/models/todo-collection.js"></script>
+    <script type="riot/tag" src="src/components/todolist.tag.html"></script>
+    <script type="riot/tag" src="src/components/todo_search.tag.html"></script>
+    <script type="riot/tag" src="src/components/todo.tag.html"></script>
+    <script type="riot/tag" src="src/components/todo_form.tag.html"></script>
+    <script type="riot/tag" src="src/components/todo_detail.tag.html"></script>
+    <script src="assets/lib/riot+compiler.min.js"></script>
+
+    <script>
+     var bus = riot.observable();
+     riot.route.stop();
+     riot.mount('*', { bus : bus } );
+     riot.route.start(true);
+    </script>
+  </body>
+</html>
