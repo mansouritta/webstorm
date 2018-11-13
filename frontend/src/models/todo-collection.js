@@ -11,6 +11,16 @@ class TodoCollection {
 
     }
 
+    search(searchString){
+        this.foundCollection = [];
+        for(var i = 0; i < this.collection.length; i++){
+            if(this.collection[i].name === searchString || this.collection[i].project === searchString){
+                this.foundCollection.push(this.collection[i]);
+            }
+        }
+        return this.foundCollection;
+    }
+
     get(id) {
         return this.collection.find(function(el) {
             return el.uuid === id;
