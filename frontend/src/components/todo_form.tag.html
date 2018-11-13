@@ -7,7 +7,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Your Name *" value=""/>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="phone" class="form-control" placeholder="Your Phone Number *" value=""/>
+                    <input type="text" name="project" class="form-control" placeholder="Project" value=""/>
                 </div>
                 <div class="form-group">
                     <textarea name="msg" class="form-control" placeholder="Describe Your Issue *"
@@ -30,9 +30,9 @@
 
      tag.submit = function() {
          if (tag.name.value) {
-             todos.add({ "name" : tag.name.value, "number" : tag.phone.value, "msg" : tag.msg.value });
+             todos.add({ "name" : tag.name.value, "project" : tag.project.value, "msg" : tag.msg.value });
              tag.name.value = '';
-             tag.phone.value = '';
+             tag.project.value = '';
              tag.msg.value = '';
          }
      }

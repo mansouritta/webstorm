@@ -3,12 +3,9 @@ class TodoCollection {
     constructor(bus) {
         // Local state
         this.collection = [];
-
         // Configuration
         this.localStorage_key = 'todos';
-
         this.bus = bus;
-
     }
 
     search(searchString){
@@ -63,7 +60,6 @@ class TodoCollection {
         this.collection = JSON.parse(localStorage.getItem(this.localStorage_key)) || [];
         this.bus.trigger('collectionUpdated');
     }
-
 
     uuid() {
         var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
